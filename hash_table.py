@@ -11,8 +11,7 @@ class HashTable:
         self.keys=[]
 
     def __setitem__ (self, key, value):
-        self.data=value
-        self.keys=key
+        self.data[self.hash(key)].append([key,value])
         
     def __getitem__ (self, key):
         for i in self.keys:
